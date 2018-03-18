@@ -6,12 +6,13 @@ const config = require("./../config")
 
 function handleGet(req, res) {
   return new Promise((resolve, reject) => {
-    
+    resolve(req)
   })
 }
 
 function handlePost(req, res) {
   return new Promise((resolve, reject) => {
+    resolve(req)
   })
 }
 
@@ -19,7 +20,7 @@ function handleBadRequest(req, res) {
   return Promise.reject("bad request")
 }
 
-function listener() {
+function listener(req, res) {
   let handler
 
   if (req.method === "GET") {
@@ -29,6 +30,17 @@ function listener() {
   } else {
     handler = handleBadRequest
   }
+
+  handler(req, res).then(data => {
+    res.writeHead(200)
+    res.write(data)
+    res.end()
+
+  }).catch(error => {
+    res.writeHead(200)
+    res.write("an error occured")
+    res.end()
+  })
 
 }
 
