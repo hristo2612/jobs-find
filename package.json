@@ -1,0 +1,26 @@
+{
+  "name": "rent-a-job",
+  "version": "1.0.0",
+  "description": "Find jobs easily! Please note that this is an open source project which will contain a light version of a ready product.",
+  "main": "main.js",
+  "scripts": {
+    "start": "cross-env MODE=production node ./backend/index.js",
+    "start-w": "nodemon ./backend/index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "cross-env": "^5.1.4",
+    "nodemon": "^1.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hristo2612/rent-a-job.git"
+  },
+  "keywords": [],
+  "author": "hristo2612",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hristo2612/rent-a-job/issues"
+  },
+  "homepage": "https://github.com/hristo2612/rent-a-job#readme"
+}
